@@ -3,11 +3,11 @@ resource "aws_eks_node_group" "Node1" {
   instance_types = ["t2.micro"]
   node_group_name = "node1"
   node_role_arn   = aws_iam_role.ec2role.arn
-  subnet_ids      = ["subnet-645aa32c"]
-
+  subnet_ids      = ["subnet-a8c4a9f1"]
+  disk_size = 30
   remote_access {
       ec2_ssh_key = "ekskey"
-      source_security_group_ids = [aws_eks_cluster.ekscluster.vpc_config[0].cluster_security_group_id]
+      source_security_group_ids = ["sg-0db14095f9e669776"]
   }
 
   scaling_config {
@@ -30,11 +30,11 @@ resource "aws_eks_node_group" "Node2" {
   instance_types = ["t2.micro"]
   node_group_name = "node2"
   node_role_arn   = aws_iam_role.ec2role.arn
-  subnet_ids      = ["subnet-1aa76f7c"]
-
+  subnet_ids      = ["subnet-11d76677"]
+  disk_size = 30
   remote_access {
       ec2_ssh_key = "ekskey"
-      source_security_group_ids = [aws_eks_cluster.ekscluster.vpc_config[0].cluster_security_group_id]
+      source_security_group_ids = ["sg-0db14095f9e669776"]
   }
 
   scaling_config {
@@ -57,11 +57,11 @@ resource "aws_eks_node_group" "Node3" {
   instance_types = ["t2.micro"]
   node_group_name = "node3"
   node_role_arn   = aws_iam_role.ec2role.arn
-  subnet_ids      = ["subnet-0dc54254"]
-
+  subnet_ids      = ["subnet-1c3a9c54"]
+  disk_size = 30
   remote_access {
       ec2_ssh_key = "ekskey"
-      source_security_group_ids = [aws_eks_cluster.ekscluster.vpc_config[0].cluster_security_group_id]
+      source_security_group_ids = ["sg-0db14095f9e669776"]
   }
 
   scaling_config {

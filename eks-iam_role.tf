@@ -29,3 +29,8 @@ resource "aws_iam_role_policy_attachment" "eks-AmazonEKSVPCResourceController" {
   role       = aws_iam_role.eksrole.name
 }
 
+resource "aws_iam_role_policy_attachment" "eks-AmazonEKSServicePolicy" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSServicePolicy"
+  role       = aws_iam_role.eksrole.name
+}
+
